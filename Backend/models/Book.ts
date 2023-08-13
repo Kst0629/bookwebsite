@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { InferSchemaType } from "mongoose";
 
 const BookSchema = new mongoose.Schema({
     title:{
@@ -28,4 +28,8 @@ const BookSchema = new mongoose.Schema({
     }
 });
 
-module.exports = Book = mongoose.model('book', BookSchema);
+type book = InferSchemaType<typeof BookSchema>;
+
+const bookModel = mongoose.model('book', BookSchema);
+
+export default bookModel;

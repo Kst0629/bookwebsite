@@ -1,20 +1,19 @@
-import mongoose from 'mongoose';
-import config from 'config';
-const db = config.get('mongoURI');
+import mongoose, {ConnectOptions} from 'mongoose'
+import db from './default';
 
 const connectDB = async () => {
     try{
         mongoose.set('strictQuery', true);
         await mongoose.connect(db, {
             useNewUrlParser: true,
-        });
+        } as ConnectOptions);
 
         console.log('MongoDB is Connected...');
-    }catch(err){
+    }catch(err: any){
         console.error(err.message);
         process.exit(1);
     }
 
 };
 
-module.exports = connectDB;
+export default connectDB;
