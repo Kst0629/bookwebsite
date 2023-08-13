@@ -3,7 +3,7 @@ interface db {
 }
 
 const config: db = {
-    mongoURI: "mongodb+srv://Vincent:@cluster0.go4aejl.mongodb.net/?retryWrites=true&w=majority"
+    mongoURI: "mongodb+srv://Vincent:Vgyjm0629@cluster0.go4aejl.mongodb.net/?retryWrites=true&w=majority"
 }
 
 function connectToMongoDB(uri:string){
